@@ -13,10 +13,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage" :  "http://colenelson806.github.io/601FinalPokedex/",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -36,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "pokeapi-js-wrapper": "^1.2.2"
   }
 }
