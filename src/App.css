@@ -1,34 +1,347 @@
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  
+}
+.displayDiv {
+  width: 100%;
+  height: auto;
+  flex-shrink: 1;
+  border: solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+.topBar {
+  height: 5%;
+  min-height: 5%;
+  width: 100%;
+  flex-shrink: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: solid black;
+  border-width: 2px;
+}
+.pokedexTitle {
+  margin: auto auto auto 1%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 3vmin;
+}
+.homeBackButtons {
+  /* margin: 0px 1% 0px 0px; */
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  min-width: 7%;
+}
+.homeButton {
+  display: inline-block;
+  min-height: 100%;
+  border-width: 0px;
+  background: transparent;
+  overflow: hidden;
+  padding-left: 1vh;
+  padding-right: 1vh;
+  font-size: 3vmin;
+  border-top-right-radius: 10px;
+}
+.backButton {
+  padding-left: 1vh;
+  padding-right: 1vh;
+  min-height: 100%;
+  border-width: 0px;
+  border-left: solid black 2px;
+  border-right: solid black 2px;
+  background: transparent;
+  font-size: 3vmin;
+}
+.homeButton:hover, .backButton:hover {background-color:lightgray}
+
+.renderedBodyDiv {
+  height: 95%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.renderedBody {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 1;
+  display: flex;
+  align-items: center;
+
+}
+.listPokedexBar, .listPokemonBar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 50%;
+  margin: 5%;
+}
+.listOfPokedex, .listOfPokemon {
+  min-height: 50%;
+  max-height: 50%;
+  flex-shrink: 1;
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 10%;
+  align-items: center; 
+  /* margin: 2% 2% 2% 2%; */
+}
+.menuInfo {
+  min-height: 50%;
+  max-height: 50%;
+  text-align: center;
+  flex-shrink: 1;
+  flex-grow: 1;
+  width: 100%;
+  font-size: 5vw;
+}
+#pokedexNamesChoice, #pokemonNamesChoice {
+  
+  flex-shrink: 1;
+  min-width: 40%;
+  max-width: 40%;
+  font-size: 2.5vw;
+}
+#pokedexNamesChoice::placeholder, #pokemonNamesChoice::placeholder {text-align: center;}
+.viewButton, .viewDetailsButton {
+  flex-shrink: 1;
+  min-width: 20%;
+  max-width: 20%;
+  font-size: 2.5vw;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.pokemonDetailsDiv {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+}
+.pokemonDetailsEvos {
+  flex-shrink: 1;
+  height: 50%;
+  width: 94%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.pokemonSpriteNameGeneration {
+  margin-top: -5px;
+  margin-left: -5px;
+  width: calc(25% + 0px);
+  height: 100%;
+  border-radius: 10px;
+  border-width: 5px;
+  border-color: black;
+  border-style: solid;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 1;
+  font-size: 2vw;
+}
+.generationDetails {
+  padding-top: 5px;
+  border-width: 0px 0px 5px 0px;
+  border-color: black;
+  border-style: solid;
+  flex-shrink: 1;
+  flex-grow: 1;
+  min-height: calc(15% -5px);
+  max-height: calc(15% -5px);
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selectedPokemonSpriteDiv {
+  flex-shrink: 1;
+  min-height: 70%;
+  max-height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.selectedPokemonSprite {
+  align-self: center;
+  flex-shrink: 1;
+  flex-grow: 1;
+  max-width: 70%;
+  min-height: auto;
+}
+.nameDetails {
+  margin-bottom: 5px;
+  border-width: 5px 0px 0px 0px;
+  border-color: black;
+  border-style: solid;
+  flex-shrink: 1;
+  flex-grow: 1;
+  min-height: calc(15% -5px);
+  max-height: calc(15% -5px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.pokemonEvoFlexBox {
+  height: 100%;
+  width: calc(75% + 20px);
+  margin-left: 3%;
+  margin-right: -5px;
+
+  display: flex;
+  flex-shrink: 1;
+
 }
+.pokemonEvoInfo {
+  margin-right: -5px;
+  margin-top: -5px;
+  height: 100%;
+  width: calc(100% - 10px);
+  flex-shrink: 1;
+  grid-area: EvoInfo;
+  border-width: 5px;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  display: flex;
+  flex-wrap: wrap;
+}
+.evolutionChainDiv {
+  height: 50%;
+  width: 100%;
+  border-width: 0px 0px 5px 0px;
+  border-color: black;
+  border-style: solid;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  flex-shrink: 1;
+}
+.evolutionStagesDiv {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 1;
+  width: 100%;
+  font-size: 1.5vw;
+}
+.evoSpritesFlex {
+  flex-shrink: 1;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.evolutionStageNamesFlex {
+  flex-shrink: 1;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.evolutionStageSprites {
+  align-self: center;
+  flex-shrink: 1;
+  max-width: 100%;
+  max-height: 100%;
+}
+.evolutionStageNames {
+  flex-shrink: 1;
+  max-width: 100%;
+}
+
+.typesAbilitiesWeightStats {
+  height: 50%;
+  flex-shrink: 1;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.typeDetails {
+  flex-shrink: 1;
+  width: 100%;
+  border-width: 0px 0px 3px 0px;
+  border-color: gray;
+  border-style: solid;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  max-height: fit-content;
+  align-items: center;
+  font-size: 3vh;
+}
+.abilityDetails {
+  flex-shrink: 1;
+  width: 100%;
+  border-width: 0px 0px 3px 0px;
+  border-color: gray;
+  border-style: solid;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  max-height: fit-content;
+  align-items: center;
+  font-size: 3vh;
+}
+.weightDetails {
+  flex-shrink: 1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  max-height: fit-content;
+  align-items: center;
+  font-size: 3vh;
+  padding-bottom: 5px;
+}
+.typeDetailsTypes, .abilityDetailsAbilities, .weightDetailsStat {text-align: center; }
+.typeDetailsName, .abilityDetailsName, .weightDetailsName {margin-left: 0.5em;}
+
+.pokemonStatDetails {
+  height: 30%;
+  width: 94%;
+  grid-area: StatDetails;
+  border-width: 5px;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 2vw;
+}
+.hp, .attack, .special-attack, .defense, .special-defense, .speed {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding-left: 1em;
+  padding-right: 1em;
+  align-items: center;
+  border-color: gray;
+  border-style: solid;
+}
+.hp {border-width: 0px 3px 3px 0px;}
+.attack{border-width: 0px 0px 3px 0px;}
+.special-attack{border-width: 0px 0px 3px 0px;}
+.defense{border-width: 0px 3px 3px 0px;}
+.special-defense {border-width: 0px 3px 0px 0px;}
+.speed {border-width: 0px 0px 0px 0px;}
+.statsStat {text-align: right;}
